@@ -80,17 +80,7 @@ export const SamplesList: FunctionComponent<ISampleListProps> = ({
     useFindSamplesByInputValueQuery({
       variables: {
         where: {
-          OR: [
-            {
-              patientsHasSampleConnection_SOME: {
-                node: {
-                  patientAliasesIsAlias_SOME: {
-                    ...searchVariables,
-                  },
-                },
-              },
-            },
-          ],
+          ...searchVariables,
         },
         options: {
           sort: [{ importDate: SortDirection.Desc }],

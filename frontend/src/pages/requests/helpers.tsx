@@ -164,6 +164,7 @@ export const PatientsListColumns: ColDef[] = [
   {
     field: "cmoPatientId",
     headerName: "CMO Patient ID",
+    sortable: true,
     valueGetter: function ({ data }) {
       for (let i of data["isAliasPatients"][0]["patientAliasesIsAlias"]) {
         if (i.namespace === "cmoId") {
@@ -175,6 +176,7 @@ export const PatientsListColumns: ColDef[] = [
   {
     field: "dmpPatientId",
     headerName: "DMP Patient ID",
+    sortable: true,
     valueGetter: function ({ data }) {
       for (let i of data["isAliasPatients"][0]?.patientAliasesIsAlias) {
         if (i.namespace === "dmpId") {
@@ -186,6 +188,7 @@ export const PatientsListColumns: ColDef[] = [
   {
     field: "isAliasPatients",
     headerName: "Smile Patient ID",
+    sortable: true,
     valueGetter: function ({ data }) {
       return data["isAliasPatients"][0].smilePatientId;
     },
@@ -194,6 +197,7 @@ export const PatientsListColumns: ColDef[] = [
   {
     field: "hasSampleSamplesConnection",
     headerName: "# Samples",
+    sortable: true,
     valueGetter: function ({ data }) {
       return data["isAliasPatients"][0].hasSampleSamplesConnection.totalCount;
     },

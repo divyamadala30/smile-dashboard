@@ -81,6 +81,7 @@ query FindSamplesByInputValue(
   $where: SampleWhere
   $options: SampleMetadataOptions
   $patientAliasesIsAliasWhere2: PatientAliasWhere
+  $requestsHasSampleConnectionWhere2: SampleRequestsHasSampleConnectionWhere
 ) {
   samplesConnection(where: $where) {
     edges {
