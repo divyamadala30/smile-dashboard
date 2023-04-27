@@ -190,7 +190,7 @@ const RecordsList: FunctionComponent<IRecordsListProps> = ({
                     height={height * 11}
                     searchVariables={
                       {
-                        [sampleQueryParamFieldName]: sampleQueryParamValue,
+                        value: sampleQueryParamValue,
                       } as SampleMetadataWhere
                     }
                     setUnsavedChanges={setUnsavedChanges}

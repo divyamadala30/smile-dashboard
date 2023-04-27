@@ -80,10 +80,17 @@ export const SamplesList: FunctionComponent<ISampleListProps> = ({
     useFindSamplesByInputValueQuery({
       variables: {
         where: {
-          hasMetadataSampleMetadata_SOME: {
-            // igoRequestId: "08944_B",
-            ...searchVariables,
-          },
+          OR: [
+            {
+              patientsHasSampleConnection_SOME: {
+                node: {
+                  patientAliasesIsAlias_SOME: {
+                    ...searchVariables,
+                  },
+                },
+              },
+            },
+          ],
         },
         options: {
           sort: [{ importDate: SortDirection.Desc }],
